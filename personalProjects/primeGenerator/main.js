@@ -1,4 +1,4 @@
-const listPrimes = (lower, upper) => {
+const generatePrimes = (lower, upper) => {
     let x = 2;
 
     if (lower <= 0) {
@@ -11,7 +11,6 @@ const listPrimes = (lower, upper) => {
     
         while (lower < upper) {
             while (!Number.isInteger(lower / x) && x < lower) {
-                console.log(`${lower / x}`);
                 x++;
             }
             if (x === lower) {
@@ -26,4 +25,4 @@ const listPrimes = (lower, upper) => {
 
 }
 
-listPrimes(1, 10);
+generatePrimes(1000, 2000);
