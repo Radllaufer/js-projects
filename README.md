@@ -18,6 +18,7 @@ Collection of small javascript made on Codecademy and by myself.
 ## Technologies
 
 1. Javascript
+2. Lodash
 
 ## Project explanations
 
