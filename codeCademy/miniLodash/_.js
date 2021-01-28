@@ -1,4 +1,6 @@
 const _ = {
+
+    // number methods
     clamp(n, low, high){
         return Math.min( Math.max ( n, low ) , high );
     },
@@ -14,6 +16,8 @@ const _ = {
         }
         return new Boolean(n >= start && n < end).toString();
     }, 
+
+    // string methods
     words(string) {
         return string.replace(/,/ig, '').split(' ');
     }, 
@@ -25,6 +29,8 @@ const _ = {
             return string;
         }
     },
+
+    // object methods
     has(object, key) {
         const hasValue = object[key];
             if (hasValue !== undefined) {
@@ -50,6 +56,8 @@ const _ = {
         }
         return undefined;
     }, 
+
+    // array methods
     drop(array, n) {
         if (n === undefined) n = 1;
         

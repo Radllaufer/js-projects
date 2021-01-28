@@ -1,29 +1,29 @@
-let x = 1;
-let y = 2;
-let z;
+const listPrimes = (lower, upper) => {
+    let x = 2;
 
-while (x < 3) {
-    console.log(x);
-    x++;
-}
-
-function isPrime() {
-    while (x < 10) {
-        z = x / y;
-        
-        while (!Number.isInteger(z) && y < x) {
-            y++;
-            console.log('y = ' + y);
+    if (lower <= 0) {
+        lower = 1;
+    } else {
+        while (lower < 3) {
+            console.log(lower);
+            lower++;
         }
-        if (y === x) {
-            console.log(x);
-            console.log('z = ' + z);
-            x++;
-            y = 2;
+    
+        while (lower < upper) {
+            while (!Number.isInteger(lower / x) && x < lower) {
+                console.log(`${lower / x}`);
+                x++;
+            }
+            if (x === lower) {
+                console.log(lower);
+                lower++;
+                x = 2;
+            }
+    
+            lower++;
         }
-
-        x++;
     }
+
 }
 
-isPrime();
+listPrimes(1, 10);
