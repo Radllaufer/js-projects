@@ -1,6 +1,6 @@
 # Javascript projects
 
-Collection of small javascript made on Codecademy and by myself
+Collection of small javascript made on Codecademy and by myself.
 
 ## Table of Contents
 
