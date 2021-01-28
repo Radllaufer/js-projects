@@ -30,4 +30,4 @@ Replicates some of the functions provided by the popular javascript library Loda
 
 #### PrimeGenerator - Personal Project
 
-Generates a list of all prime numbers in a given range.
+Generates a list of all prime numbers in a given range. It accepts values from 1 and higher.
