@@ -30,10 +30,10 @@ A small script that uses the Luhn algorithm to filter out and update invalid cre
 
 Replicates some of the functions provided by the popular javascript library Lodash.
 
-### PrimeGenerator
-
-Generates a list of all prime numbers in a given range. It accepts values from 1 and higher.
-
 ### weatherByChance
 
 Generates a questionable weather forecast based on information about clouds, time of year and random data.
+
+### PrimeGenerator
+
+Generates a list of all prime numbers in a given range. It accepts values from 1 and higher.
