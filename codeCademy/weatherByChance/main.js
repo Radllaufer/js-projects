@@ -1,60 +1,61 @@
 const cloudArray = [
-    { cloud: 'cumulonimbus',    weather: 'rain'     },
-    { cloud: 'cirrocumulus',    weather: 'fair'     },
-    { cloud: 'cirrostratus',    weather: 'fair'     },
-    { cloud: 'cirrus',          weather: 'fair'     }, 
-    { cloud: 'altocumulus',     weather: 'fair'     }, 
-    { cloud: 'altostratus',     weather: 'overcast' }, 
-    { cloud: 'nimbostratus',    weather: 'rain'     }, 
-    { cloud: 'cumulus',         weather: 'fair'     }, 
-    { cloud: 'stratocumulus',   weather: 'overcast' }, 
-    { cloud: 'stratus',         weather: 'fair'     },
+    { cloud: 'cumulonimbus', weather: 'rain' },
+    { cloud: 'cirrocumulus', weather: 'fair' },
+    { cloud: 'cirrostratus', weather: 'fair' },
+    { cloud: 'cirrus', weather: 'fair' },
+    { cloud: 'altocumulus', weather: 'fair' },
+    { cloud: 'altostratus', weather: 'overcast' },
+    { cloud: 'nimbostratus', weather: 'rain' },
+    { cloud: 'cumulus', weather: 'fair' },
+    { cloud: 'stratocumulus', weather: 'overcast' },
+    { cloud: 'stratus', weather: 'fair' },
 ]
 
 
-const randomCloud = (array) => {
+const randomCloud = (array) => { // returns random object from array
     return array[Math.floor(Math.random() * array.length)];
 }
 
+const randomNumber = (lower, upper) => { // returns random number between lower and upper number
+    return Math.floor(Math.random() * (upper - lower) + lower);
+}
 
 const randomTemperature = () => {
-    const currentMonth = (() => {
-        const d = new Date;
-        return d.getMonth();
-    })();
+    const currentMonth = (new Date).getMonth();
 
     if (currentMonth >= 4 && currentMonth <= 8) { // Warmer months
-        return Math.floor(Math.random() * 30 + 10); // min: 10° C, max: 40° C
-    } else { // colder months
-        return Math.floor(Math.random() * 40 - 20); // min: -20° C, max: 20° C
+        return randomNumber(40, 10);
+    } else {                                      // colder months
+        return randomNumber(20, -20);
     }
 }
 
-
 const randomPressure = () => {
-    return Math.floor(Math.random() * (1060 - 960) + 960); // min: 960hPa, max: 1060hPa
+    return randomNumber(1060, 960);
 }
 
 const randomHumidity = () => {
-    return Math.floor(Math.random() * 60 + 40); // min: 40%, max: 100%
+    return randomNumber(100, 40);
 }
 
 
+
 const randomWeatherForecast = () => {
+    // Variables used in return string
     let firstTemperature = randomTemperature();
     let secondTemperature = randomTemperature();
     const cloud = randomCloud(cloudArray);
     let weatherSentence = '';
 
     while (firstTemperature === secondTemperature) {
-            secondTemperature = randomTemperature();
-    }  
+        secondTemperature = randomTemperature();
+    }
     if (firstTemperature > secondTemperature) {
         const swap = firstTemperature;
         firstTemperature = secondTemperature;
         secondTemperature = swap;
-    } 
-    
+    }
+
     if (cloud.weather === 'rain') {
         weatherSentence = 'rain';
     } else if (cloud.weather === 'fair') {
@@ -67,11 +68,5 @@ const randomWeatherForecast = () => {
 };
 
 
+
 console.log(randomWeatherForecast());
-
-
-/*
-    Notes:
-    - Edit randomPressure and randomHumidity to stay positive
-    - Use one function for multiple random requests
-*/
