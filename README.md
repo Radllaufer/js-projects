@@ -13,7 +13,6 @@ Collection of small javascript made on Codecademy and by myself.
 1. creditCardChecker
 2. miniLodash
 3. weatherByChance
-4. primeGenerator
 
 ## Technologies
 
@@ -33,7 +32,3 @@ Replicates some of the functions provided by the popular javascript library Loda
 ### weatherByChance
 
 Generates a questionable weather forecast based on information about clouds, time of year and random data.
-
-### PrimeGenerator
-
-Generates a list of all prime numbers in a given range. It accepts values from 1 and higher.
