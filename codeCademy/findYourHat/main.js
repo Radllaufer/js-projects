@@ -30,9 +30,7 @@ class Field {
         const playerCoords = getRandomCoords();
         const hatCoords = getRandomCoords();
 
-        while (playerCoords === hatCoords) {
-            hatCoords = getRandomCoords();
-        }
+        while (playerCoords === hatCoords) hatCoords = getRandomCoords();
 
         resultArray[playerCoords.y][playerCoords.x] = '*';
         resultArray[hatCoords.y][hatCoords.x] = '^';
@@ -44,8 +42,8 @@ class Field {
             let coords = getRandomCoords();
             
             while (resultArray[coords.y][coords.x] === 'O' ||
-                resultArray[coords.y][coords.x] === '*' ||
-                resultArray[coords.y][coords.x] === '^') {
+                   resultArray[coords.y][coords.x] === '*' ||
+                   resultArray[coords.y][coords.x] === '^') {
                     
                 coords = getRandomCoords();
             }
@@ -68,7 +66,10 @@ class Field {
 
             for (let i = 0; i < resultArray.length; i++) { // put all open tiles into an array
                 for (let j = 0; j < resultArray[i].length; j++) {
-                    if (resultArray[i][j] === '░' || resultArray[i][j] === '*' || resultArray[i][j] === '^') {
+                    if (resultArray[i][j] === '░' || 
+                        resultArray[i][j] === '*' || 
+                        resultArray[i][j] === '^') {
+
                         openTilesCoords.push( {x: j, y: i} );
                     }
                 }
@@ -78,11 +79,9 @@ class Field {
                 for (let j = 0; j < checkArray.length; j++) {
                     for (let k = 0; k < openTilesCoords.length; k++) {
                         for (let l = 0; l < oldCoords.length; l++) {
-                            if (
-                                (openTilesCoords[k].x + '' + openTilesCoords[k].y)
-                                    === 
-                                ((oldCoords[l].x + checkArray[j].x) + '' + (oldCoords[l].y + checkArray[j].y)) 
-                                ) {
+                            if (    (openTilesCoords[k].x + '' + openTilesCoords[k].y) === 
+                                    ((oldCoords[l].x + checkArray[j].x) + '' + (oldCoords[l].y + checkArray[j].y))    ) {
+
                                     connectedCoords.push({
                                         x: (oldCoords[l].x + checkArray[j].x),
                                         y: (oldCoords[l].y + checkArray[j].y)
@@ -102,7 +101,9 @@ class Field {
 
             for (let i = 0; i < connectedCoords.length; i++) { // remove all duplicates
                 for (let j = 0; j < finalCoords.length; j++) {
-                    if (finalCoords[j].x === connectedCoords[i].x && finalCoords[j].y === connectedCoords[i].y) {
+                    if (finalCoords[j].x === connectedCoords[i].x && 
+                        finalCoords[j].y === connectedCoords[i].y) {
+
                         finalCoords.splice(j, 1);
                     }
                 }
@@ -110,9 +111,13 @@ class Field {
             }
 
             for (let i = 0; i < finalCoords.length; i++) { // check if Field includes player and hat
-                if (finalCoords[i].x === hatCoords.x && finalCoords[i].y === hatCoords.y) {
+                if (finalCoords[i].x === hatCoords.x && 
+                    finalCoords[i].y === hatCoords.y) {
+                        
                     for (let j = 0; j < finalCoords.length; j++) {
-                        if (finalCoords[j].x === playerCoords.x && finalCoords[j].y === playerCoords.y) {
+                        if (finalCoords[j].x === playerCoords.x && 
+                            finalCoords[j].y === playerCoords.y) {
+
                             return true;
                         }
                     }
@@ -136,29 +141,13 @@ class Field {
     }
 
 
-    get f() {
-        return this._f;
-    }
-
-    get dimensions() {
-        return this._dimensions;
-    }
-
-    get x() {
-        return this._x;
-    }
-
-    get y() {
-        return this._y;
-    }
-
-    set x(e) {
-        this._x = e;
-    }
-
-    set y(e) {
-        this._y = e;
-    }
+    get f()             { return this._f; }
+    get dimensions()    { return this._dimensions; }
+    get x()             { return this._x; }
+    get y()             { return this._y; }
+    
+    set x(e)            { this._x = e; }
+    set y(e)            { this._y = e; }
 
 
     print() {
@@ -193,7 +182,6 @@ class Field {
             case 'd':
                 this.x++;
                 break;
-
             default:
                 break;
         }
