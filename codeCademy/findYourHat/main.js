@@ -113,7 +113,7 @@ class Field {
             for (let i = 0; i < finalCoords.length; i++) { // check if Field includes player and hat
                 if (finalCoords[i].x === hatCoords.x && 
                     finalCoords[i].y === hatCoords.y) {
-                        
+
                     for (let j = 0; j < finalCoords.length; j++) {
                         if (finalCoords[j].x === playerCoords.x && 
                             finalCoords[j].y === playerCoords.y) {
@@ -126,17 +126,14 @@ class Field {
             return false;
         }
 
-        if (checkIfValid()) {
-            return resultArray; // returns undefined if field is unplayable or doesn't include the player and hat
-        }
+        if ( checkIfValid() ) return resultArray; // returns undefined if field is unplayable or doesn't include the player and hat
     }
 
     static generateField(width, height, percentage) {
         let randomField = this.generateRandomField(width, height, percentage);
 
-        while (randomField === undefined) {
-            randomField = this.generateRandomField(width, height, percentage);
-        }
+        while ( randomField === undefined ) randomField = this.generateRandomField(width, height, percentage);
+
         return randomField;
     }
 
