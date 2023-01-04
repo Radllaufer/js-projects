@@ -29,7 +29,7 @@ A collection of javascript projects made on Codecademy and by myself.
 ### **Find Your Hat**
 #### *Codecademy - Terminal Game*
 
-You are lost in a field which is filled with dangerous holes,and to make things even worse you have also lost your hat. 
+You are lost in a field which is filled with dangerous holes, and to make things even worse you have also lost your hat. 
 The goal is to get your character to his hat as fast as possible without stepping into a hole, off the board or on his previous path.
 
 There are 3 pre-defined levels and a function that generates a random one based on a given width, height and the desired percentage of holes relative to the area of the field.
