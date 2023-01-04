@@ -11,7 +11,7 @@ A collection of javascript projects made on Codecademy and by myself.
 
 ## Projects
 
-1. Find Your Hat
+1. **Find Your Hat**
 2. Credit Card Checker
 3. Mini Lodash
 4. Prime generator
