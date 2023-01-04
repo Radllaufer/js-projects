@@ -1,3 +1,5 @@
+let primesArray = [];
+
 const checkPrime = (x) => {
     if (x < 2 || !Number.isInteger(x)) {
         return;
@@ -13,14 +15,13 @@ const checkPrime = (x) => {
 }
 
 const findPrimes = (start, end) => {
-    let primesArray = [];
     for (let i = start; i <= end; i++) {
         if (checkPrime(i)) {
             primesArray.push(i);
         }
     }
-
-    return primesArray;
 }
 
 findPrimes(1, 1000);
+
+console.log(primesArray);

@@ -30,7 +30,7 @@ class Field {
         const playerCoords = getRandomCoords();
         const hatCoords = getRandomCoords();
 
-        while (playerCoords === hatCoords) hatCoords = getRandomCoords();
+        while ( playerCoords === hatCoords ) hatCoords = getRandomCoords();
 
         resultArray[playerCoords.y][playerCoords.x] = '*';
         resultArray[hatCoords.y][hatCoords.x] = '^';
@@ -157,7 +157,7 @@ class Field {
         console.log('________________');
         let direction = prompt('Find Your Hat | ');
 
-        if (direction !== 'w' && direction !== 'a' && direction !== 's' && direction !== 'd') {
+        if ( direction !== 'w' && direction !== 'a' && direction !== 's' && direction !== 'd' ) {
             console.clear();
             this.print();
             console.log('________________');
@@ -256,7 +256,7 @@ const lv3 = new Field([
     ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'],
 ])
 
-const randomLevel = new Field(Field.generateField(8, 8, 40)); 
+const randomLevel = new Field(Field.generateField(8, 8, 50)); 
 /*  - "(8, 8, 40)" is a good starting point
     - should't go much higher than "(12, 10, 50)"
     - escape with ctrl+c if you get stuck           */

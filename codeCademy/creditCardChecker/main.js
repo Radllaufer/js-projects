@@ -22,13 +22,14 @@ const mystery4 = [4, 9, 2, 9, 8, 7, 7, 1, 6, 9, 2, 1, 7, 0, 9, 3]           // f
 const mystery5 = [4, 9, 1, 3, 5, 4, 0, 4, 6, 3, 0, 7, 2, 5, 2, 3]
 
 // An array of all the arrays above
-const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, invalid3, invalid4, invalid5, mystery1, mystery2, mystery3, mystery4, mystery5]
+const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, invalid3, invalid4, invalid5, mystery1, mystery2, mystery3, mystery4, mystery5];
 
 
 
 // Luhn algorithm to check for validness
 const validateCred = (array, request) => {
     let x = true;
+
     let checkArray = array.reduceRight((accumulator, currentValue) => {
         if (x === true) {
             x = false;
@@ -45,7 +46,7 @@ const validateCred = (array, request) => {
    } else if (request === 'result') {
        return checkArray %= 10;
    }
-};
+}
 
 
 // returns an array of invalid cards
@@ -71,8 +72,8 @@ const idInvalidCompanies = (() => {
     
     findInvalidCards.forEach(current => {
         for (let i = 0; i < companies.length; i++) {
-            if (current[0] === companies[i].firstDigit && !invalidCompanies.includes(companies[i].company)) {
-                invalidCompanies.push(companies[i].company);
+            if ( current[0] === companies[i].firstDigit && !invalidCompanies.includes(companies[i].company) ) {
+                invalidCompanies.push( companies[i].company );
             }            
         }
     });
@@ -85,6 +86,7 @@ const idInvalidCompanies = (() => {
 const makeCardsValid = (() => {
     let i = 5; // testcode
     const invalidCardsClone = _.cloneDeep(findInvalidCards);
+    
     const newArray = invalidCardsClone.map(current => {
         const getResult = validateCred(current, 'result');
         
@@ -97,7 +99,7 @@ const makeCardsValid = (() => {
         
         return current;
     });
-    return newArray;
+    return newArray;c
 })();
 
 

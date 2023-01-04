@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+	background-color: hsla(0, 100%, 0%, .9);
+}
+
+h1 {
+	margin: 50px auto 0 auto;
+	font-family: "Lucida Console";
+	font-size: 50px;
+	text-align: center;
+	color: white;
+}
+
+div.calc {
+    margin: 50px auto 0 auto;
+    padding: 20px;
+    width: 500px;
+    height: 700px;
+    background-color: lightgrey;
+}
+
+	div.screen {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		padding: 30px;
+	    width: 450px;
+	    height: 100px;
+	    background-color: black;
+	}
+
+		#screen {
+			font-family: "Lucida Console";
+			font-size: 20px;
+			color: white;
+			text-align: right;
+			overflow: hidden;
+		}
+
+	div.buttons {
+		margin: 20px auto 0 auto;
+		width: 400px;
+		height: 480px;
+		display: grid;
+		grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+		justify-items: center;
+
+	}
+
+	button {
+		height: 120px;
+		width: 80px;
+		border: none;
+		background-color: hsla(0, 100%, 0%, .9);
+		color: white;
+		font-size: 25px;
+		font-family: "Lucida Console";
+		transition: all 150ms ease-in-out 0s;
+	}
+
+		button:hover, .equal:hover {
+			background-color: crimson;
+		}
+
+		button.equal {
+			background-color: darkred;
+		}
